@@ -1,4 +1,4 @@
-import { textSlicer } from "../functions";
+import { textSlicer } from "../utils/functions";
 import { IProduct } from "../interfaces";
 import Image from "./Image";
 import Button from "./Ui/Button";
@@ -33,8 +33,8 @@ export default function ProductCard({product}:IProps) {
       </div>
 
       <div className="flex items-center justify-between space-x-2 mt-5">
-        <Button className="bg-indigo-700 ">EDIT</Button>
-        <Button className="bg-red-700 ">DELETE</Button>
+        <Button className="bg-indigo-700 hover:bg-indigo-800  ">EDIT</Button>
+        <Button className="bg-red-700 hover:bg-red-800 ">DELETE</Button>
       </div>
 
    </div>
