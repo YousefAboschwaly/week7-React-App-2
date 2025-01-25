@@ -5,9 +5,10 @@ interface IProps{
   isOpen:boolean;
   closeModal:()=>void;
   title?:string;
+  description?:string;
   children:ReactNode
 }
-export default function Modal({isOpen,closeModal, title, children}:IProps) {
+export default function Modal({isOpen,closeModal, title,description ,children}:IProps) {
 
   return (
     <>
@@ -27,7 +28,7 @@ export default function Modal({isOpen,closeModal, title, children}:IProps) {
             <div className="fixed inset-0 bg-black/25" />
           </Transition.Child>
 
-          <div className="fixed inset-0 overflow-y-auto">
+          <div className="fixed inset-0 overflow-y-auto backdrop-blur-sm"aria-hidden="true">
             <div className="flex min-h-full items-center justify-center p-4 text-center">
               <Transition.Child
                 as={Fragment}
@@ -45,7 +46,9 @@ export default function Modal({isOpen,closeModal, title, children}:IProps) {
                     className="text-lg font-medium leading-6 text-gray-900"
                   >
                     {title}
-                  </Dialog.Title>}
+</Dialog.Title>}
+
+{description && <p className="text-sm text-gray-500 mt-3">{description}</p>}
                 
 
                   <div className="mt-4">

@@ -8,7 +8,7 @@ export default function Button({children ,className, width='w-full' ,  ...rest  
   return (
     <>
 
-  <button className={`${className} ${width} p-2 rounded-md text-white` } {...rest}>{children}</button>
+  <button className={`${className} ${width} p-2 rounded-lg text-white` } {...rest}>{children}</button>
  
     </>
   )
